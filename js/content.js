@@ -64,10 +64,13 @@ function attachColorLine(profiles) {
     });
 
     if (color) {
-      var menubar = document.querySelector('#nav-menubar');
-      var barDiv = document.createElement('div');
-      barDiv.style = 'position:absolute;top:39px;width:100%;height:3px;z-index:0;background-color:#' + color;
-      menubar.appendChild(barDiv);
+      var background = '#' + color;
+      document.querySelector("#nav-menubar").style.background = background;
+      document.querySelector("#console-nav-footer").style.background = background;
+      var e = document.querySelectorAll(".nav-menu");
+      for (var i = 0; i < e.length; i++) {
+        e[i].style.background = background;
+      }
     }
   }
 }
